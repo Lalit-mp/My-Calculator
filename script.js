@@ -11,11 +11,15 @@ for (let button of allButtons){
         } else if (buttonInnervalue === "AC") {
             display.value = "";
         } else if (buttonInnervalue === "=") {
-            try{
-                display.value = eval(display.value);
-            }
-            catch(error){
-                alert("Invalid Calculation")
+            if(display.value){
+                try{
+                    display.value = eval(display.value);
+                }
+                catch(error){
+                    alert("Invalid Calculation")
+                }
+            }else {
+                alert("Please add some value")
             }
         } else {
             display.value += buttonInnervalue;
